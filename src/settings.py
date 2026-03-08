@@ -1,8 +1,8 @@
-import os 
+import os
 from pathlib import Path
 
 from sqlalchemy import create_engine
-from sqlalchemy.engine import URL 
+from sqlalchemy.engine import URL
 from sqlalchemy.orm import sessionmaker
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -29,6 +29,7 @@ os.makedirs(LOG_DIR, exist_ok=True)
 
 FIXTURES_DIR = PROJECT_ROOT / "src/fixtures"
 os.makedirs(FIXTURES_DIR, exist_ok=True)
+
 
 def get_db():
     db = SessionLocal()
