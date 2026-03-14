@@ -5,7 +5,7 @@ from sqlalchemy import Boolean, DateTime, ForeignKey, UniqueConstraint, func
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from src.models.base import Base, str_20, str_100, str_300, str_500, str_1000
+from src.models.base import Base, str_20, str_100, str_500, str_1000
 
 
 class ModernAppPackage(Base):
@@ -21,11 +21,13 @@ class ModernAppPackage(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     host_id: Mapped[int] = mapped_column(ForeignKey("host.id"), index=True)
+    vendor_id: Mapped[Optional[int]] = mapped_column(
+        ForeignKey("vendor.id"), index=True
+    )
     package_full_name: Mapped[str_500]
     package_family_name: Mapped[Optional[str_500]]
     display_name: Mapped[Optional[str_500]]
     publisher_id: Mapped[Optional[str_100]]
-    publisher_display_name: Mapped[Optional[str_300]]
     version: Mapped[Optional[str_100]]
     architecture: Mapped[Optional[str_20]]
     install_location: Mapped[Optional[str_1000]]
