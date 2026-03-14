@@ -7,6 +7,7 @@ from sqlalchemy.orm import sessionmaker
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
+DB_SCHEMA_NAME = os.getenv("DB_SCHEMA_NAME", "alethia")
 DB_USERNAME = os.getenv("DB_USERNAME")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_HOST = os.getenv("DB_HOST")
