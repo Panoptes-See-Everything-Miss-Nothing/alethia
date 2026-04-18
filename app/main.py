@@ -2,8 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
-    title="Alethia",
-    description="Vulnerability Intelligence & Scan Analysis Service"
+    title="Alethia", description="Vulnerability Intelligence & Scan Analysis Service"
 )
 
 

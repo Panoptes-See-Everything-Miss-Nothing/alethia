@@ -6,7 +6,7 @@ from typing import Dict, List, Optional
 
 from sqlalchemy.orm import Session
 
-from src.models import Host, InstalledApp, ModernAppPackage, Vendor
+from app.models import Host, InstalledApp, ModernAppPackage, Vendor
 from src.settings import FIXTURES_DIR, SessionLocal
 
 logger = logging.getLogger(__name__)
